@@ -33,13 +33,14 @@ Simtools_final_project/
 │       ├── factors_influencing_over-indebtedness.csv
 │       ├── simulation_raw_data_all_runs.csv
 │       └── time_series_key_figures_1995_2025.csv
+|
+├── notebook/
+│   └── evaluation_shopping_addiction_debts.ipynb
+|
 ├── src/
 │   ├── impact_analysis.py    # question 1
 │   ├── run.py                # Central execution
 │   └── simulation.py         # question 2
-│
-├── notebook/
-│   └── evaluation_shopping_addiction_debts.ipynb
 │
 ├── README.md
 └── requirements.txt
