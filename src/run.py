@@ -5,28 +5,9 @@ import os
 
 if __name__ == "__main__":
 
-    print("\n=== START MONTE-CARLO-SIMULATION ===")
-
-    # 1) Start simulation
-    df = run_simulation()
-
-    print("\nMonte-Carlo simulation successfully completed.")
-
-    # Ensure that year is an integer
-    df["year"] = df["year"].astype(int)
-
-    # Show selected years
-    selected_years = [1995, 2005, 2015, 2025]
-    filtered = df[df["year"].isin(selected_years)]
-
-    print("\n--- Time series selection ---")
-    print(filtered)
-
-    print("\nResults saved under 'data/results/time_series_key_figures_1995_2025.csv'")
-
     print("\n=== START Impact Analysis ===")
 
-    # 2) Start impact analysis
+    # 1) Start impact analysis
     df_sens = analyze_impact(n=3000, random_state=42)
     importances = train_impact_model(df_sens, debt_threshold=500)
 
@@ -45,4 +26,23 @@ if __name__ == "__main__":
     )
 
     print(f"\nResults saved under {importance_path}")
+
+    print("\n=== START MONTE-CARLO-SIMULATION ===")
+
+    # 2) Start simulation
+    df = run_simulation()
+
+    print("\nMonte-Carlo simulation successfully completed.")
+
+    # Ensure that year is an integer
+    df["year"] = df["year"].astype(int)
+
+    # Show selected years
+    selected_years = [1995, 2005, 2015, 2025]
+    filtered = df[df["year"].isin(selected_years)]
+
+    print("\n--- Time series selection ---")
+    print(filtered)
+
+    print("\nResults saved under 'data/results/time_series_key_figures_1995_2025.csv'")
     print("\n=== PROGRAM ENDED ===")
