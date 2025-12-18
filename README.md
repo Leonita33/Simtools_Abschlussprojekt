@@ -119,7 +119,7 @@ python src/run.py
 3. Analyze results:
 
 * CSV files under `data/results/`
-* Visualization in the notebook `notebook/evaluation_shopping_addiction_debts.ipynb`
+* Visualization in the notebook `notebook/evaluation_shopping_addiction_debt.ipynb`
 
 ---
 
